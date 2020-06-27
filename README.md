@@ -1,1 +1,3 @@
-# write-your-array-methods-starter
+# Starter code for "Write Your Own Array Methods"
+
+Follow the instructions in canvas.
