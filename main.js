@@ -6,9 +6,9 @@ let testWordsArray = ['potato', 'rainbow', 'cloud', 'duck', 'orange', 'three']
 
 // This is one example of implementing the functionality of forEach:
 const newForEach = function(array, callback){
-    let len = array.length
-    for (let index = 0; index < len; index++){
-        callback(array[index], index, array)
+    for (let index = 0; index < array.length; index = index + 1){
+        let currentItem = array[index]
+        callback(currentItem, index, array)
     }
 }
 

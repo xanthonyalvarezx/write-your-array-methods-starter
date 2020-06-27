@@ -10,8 +10,8 @@ const negate = function (val) {
 const isAbove10 = function (val) {
     return val > 10
 }
-const isAbove678 = function(val) {
-  return val > 678
+const isAbove678 = function (val) {
+    return val > 678
 }
 const isNegative = function (val) {
     return val < 0
@@ -23,37 +23,57 @@ const isNumber = function (val) {
     return typeof val === 'number'
 }
 let nums = [-3, -1, 0, 1, 2, 30, 45, 678]
+
 console.group('newForEach')
-console.log(`newForEach(nums, echo) === ${newForEach(nums, echo)}; should be ${nums.forEach(echo)}`)
+console.log('Your newForEach output:')
+newForEach(nums, echo)
+console.log('Should match built in forEach output:')
+nums.forEach(echo)
 console.groupEnd()
+
 console.group('newMap')
-console.log(JSON.stringify(newMap(nums, isNegative)) === JSON.stringify(nums.map(isNegative)), `newMap(nums, isNegative) === ${JSON.stringify(newMap(nums, isNegative))}; should be ${JSON.stringify(nums.map(isNegative))}`)
-console.log(JSON.stringify(newMap(nums, addTwo)) === JSON.stringify(nums.map(addTwo)), `newMap(nums, addTwo) === ${JSON.stringify(newMap(nums, addTwo))}; should be ${JSON.stringify(nums.map(addTwo))}`)
+console.log('passed test1: ')
+console.log(JSON.stringify(newMap(nums, isNegative)) === JSON.stringify(nums.map(isNegative)))
+console.log('Your Test1 newMap output:')
+console.log(JSON.stringify(newMap(nums, isNegative)))
+console.log('Should match built in map output:')
+console.log(JSON.stringify(nums.map(isNegative)))
+console.log('passed test2: ')
+console.log((JSON.stringify(newMap(nums, addTwo)) === JSON.stringify(nums.map(addTwo))))
+console.log('Your Test2 newMap output:')
+console.log(JSON.stringify(newMap(nums, addTwo)))
+console.log('Should match built in map output:')
+console.log(JSON.stringify(nums.map(addTwo)))
 console.groupEnd()
+
 console.group('newSome')
 console.log(JSON.stringify(newSome(nums, isNegative)) === JSON.stringify(nums.some(isNegative)), `newSome(nums, isNegative) === ${newSome(nums, isNegative)}; should be ${nums.some(isNegative)}`)
 console.log(JSON.stringify(newSome(nums, isPositive)) === JSON.stringify(nums.some(isPositive)), `newSome(nums, isPositive) === ${newSome(nums, isPositive)}; should be ${nums.some(isPositive)}`)
 console.log(JSON.stringify(newSome(nums, isAbove10)) === JSON.stringify(nums.some(isAbove10)), `newSome(nums, isAbove10) === ${newSome(nums, isAbove10)}; should be ${nums.some(isAbove10)}`)
 console.log(JSON.stringify(newSome(nums, isAbove678)) === JSON.stringify(nums.some(isAbove678)), `newSome(nums, isAbove678) === ${newSome(nums, isAbove678)}; should be ${nums.some(isAbove678)}`)
 console.groupEnd()
+
 console.group('newFind')
 console.log(JSON.stringify(newFind(nums, isNegative)) === JSON.stringify(nums.find(isNegative)), `newFind(nums, isNegative) === ${newFind(nums, isNegative)}; should be ${nums.find(isNegative)}`)
 console.log(JSON.stringify(newFind(nums, isPositive)) === JSON.stringify(nums.find(isPositive)), `newFind(nums, isPositive) === ${newFind(nums, isPositive)}; should be ${nums.find(isPositive)}`)
 console.log(JSON.stringify(newFind(nums, isAbove10)) === JSON.stringify(nums.find(isAbove10)), `newFind(nums, isAbove10) === ${newFind(nums, isAbove10)}; should be ${nums.find(isAbove10)}`)
 console.log(JSON.stringify(newFind(nums, isAbove678)) === JSON.stringify(nums.find(isAbove678)), `newFind(nums, isAbove678) === ${newFind(nums, isAbove678)}; should be ${nums.find(isAbove678)}`)
 console.groupEnd()
+
 console.group('newFindIndex')
 console.log(JSON.stringify(newFindIndex(nums, isNegative)) === JSON.stringify(nums.findIndex(isNegative)), `newFindIndex(nums, isNegative) === ${newFindIndex(nums, isNegative)}; should be ${nums.findIndex(isNegative)}`)
 console.log(JSON.stringify(newFindIndex(nums, isPositive)) === JSON.stringify(nums.findIndex(isPositive)), `newFindIndex(nums, isPositive) === ${newFindIndex(nums, isPositive)}; should be ${nums.findIndex(isPositive)}`)
 console.log(JSON.stringify(newFindIndex(nums, isAbove10)) === JSON.stringify(nums.findIndex(isAbove10)), `newFindIndex(nums, isAbove10) === ${newFindIndex(nums, isAbove10)}; should be ${nums.findIndex(isAbove10)}`)
 console.log(JSON.stringify(newFindIndex(nums, isAbove678)) === JSON.stringify(nums.findIndex(isAbove678)), `newFindIndex(nums, isAbove678) === ${newFindIndex(nums, isAbove678)}; should be ${nums.findIndex(isAbove678)}`)
 console.groupEnd()
+
 console.group('newEvery')
 console.log(JSON.stringify(newEvery(nums, isNegative)) === JSON.stringify(nums.every(isNegative)), `newEvery(nums, isNegative) === ${newEvery(nums, isNegative)}; should be ${nums.every(isNegative)}`)
 console.log(JSON.stringify(newEvery(nums, isPositive)) === JSON.stringify(nums.every(isPositive)), `newEvery(nums, isPositive) === ${newEvery(nums, isPositive)}; should be ${nums.every(isPositive)}`)
 console.log(JSON.stringify(newEvery(nums, isAbove10)) === JSON.stringify(nums.every(isAbove10)), `newEvery(nums, isAbove10) === ${newEvery(nums, isAbove10)}; should be ${nums.every(isAbove10)}`)
 console.log(JSON.stringify(newEvery(nums, isNumber)) === JSON.stringify(nums.every(isNumber)), `newEvery(nums, isNumber) === ${newEvery(nums, isNumber)}; should be ${nums.every(isNumber)}`)
 console.groupEnd()
+
 console.group('newFilter')
 console.log(JSON.stringify(newFilter(nums, isNegative)) === JSON.stringify(nums.filter(isNegative)), `newFilter(nums, isNegative) === ${JSON.stringify(newFilter(nums, isNegative))}; should be ${JSON.stringify(nums.filter(isNegative))}`)
 console.log(JSON.stringify(newFilter(nums, isPositive)) === JSON.stringify(nums.filter(isPositive)), `newFilter(nums, isPositive) === ${JSON.stringify(newFilter(nums, isPositive))}; should be ${JSON.stringify(nums.filter(isPositive))}`)
