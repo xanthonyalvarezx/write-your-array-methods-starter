@@ -8,6 +8,66 @@ let testWordsArray = ['potato', 'rainbow', 'cloud', 'duck', 'orange', 'three']
 function newForEach(array, callback){
     for (let index = 0; index < array.length; index = index + 1){
         let currentItem = array[index]
-        callback(currentItem, index, array)
+        callback(currentItem)
+    }
+}
+
+ 
+function newMap(array, callback){
+   
+        let map1 = []
+        for (let index = 0; index < array.length; index = index + 1){
+            let currentItem = array[index]
+            map1.push(callback(currentItem))
+        
+    }
+    return map1
+}
+ 
+
+
+function newSome(array, callback){
+    for (let index = 0; index < array.length; index = index + 1){
+        let currentItem = array[index]
+       
+        callback(currentItem,index,array)
+       return  array.some(callback)
+        
+    }
+}
+
+function newFind(array, callback){
+    for (let index = 0; index < array.length; index = index + 1){
+        let currentItem = array[index]
+        callback(currentItem,index,array)
+       return array.find(callback)
+    }
+}
+function newFindIndex(array, callback){
+    for (let index = 0; index < array.length; index = index + 1){
+        let currentItem = array[index]
+        callback(currentItem,index,array)
+       return array.findIndex(callback)
+    }
+}
+function newEvery(array, callback){
+    for (let index = 0; index < array.length; index = index + 1){
+        let currentItem = array[index]
+        callback(currentItem,index,array)
+       return array.every(callback)
+    }
+}
+function newFilter(array, callback){
+    for (let index = 0; index < array.length; index = index + 1){
+        let currentItem = array[index]
+        callback(currentItem,index,array)
+       return array.every(callback)
+    }
+}
+function newFilter(array, callback){
+    for (let index = 0; index < array.length; index = index + 1){
+        let currentItem = array[index]
+        callback(currentItem,index,array)
+       return array.filter(callback)
     }
 }
